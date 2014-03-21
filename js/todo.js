@@ -1,3 +1,24 @@
+
+//provides submit button functionality
+$(document).ready(function(){
+	$(".draft").focus();
+
+
+	$("#draft").keypress(function(event){					//enter key
+		if(event.charCode === 13){
+			Todo.add($("#draft").val());
+			$("#draft").val('');
+		}
+	});
+
+	$("#draft").click(function(){							//submit button
+		Todo.add($("#draft").val());
+		$("#draft").val('');
+		$(".draft").focus();
+	})
+
+});
+
 var Todo = {
 	list: []
 }
@@ -25,5 +46,5 @@ Todo.add = function(item){
 
 //function to remove item
 // Todo.remove(){
-
+	
 // }

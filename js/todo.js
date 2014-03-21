@@ -20,5 +20,4 @@ Todo.populate();
 //function to add and display new items
 Todo.add = function(item){
 	this.list.push(item);
-	display(item);
 }

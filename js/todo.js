@@ -1,5 +1,5 @@
 var Todo = {
-	list: [""],
+	list: []
 }
 
 //function to append new item to list
@@ -11,13 +11,19 @@ var display = function(item){
 //function to load list on load
 Todo.populate = function(){
 	for(var i = 0; i < this.length; i++){
-	display(this[i]);
+		display(this.list[i]);
 	}
 }
 
-Todo.populate();
 
 //function to add and display new items
 Todo.add = function(item){
 	this.list.push(item);
+	display(item);
 }
+
+
+//function to remove item
+// Todo.remove(){
+
+// }

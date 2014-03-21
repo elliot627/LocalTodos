@@ -45,6 +45,9 @@ Todo.add = function(item){
 
 
 //function to remove item
-// Todo.remove(){
+Todo.remove(){
 	
-// }
+}
+
+
+

@@ -11,7 +11,7 @@ $(document).ready(function(){
 		}
 	});
 
-	$("#draft").click(function(){							//submit button
+	$("#add").click(function(){							//submit button
 		Todo.add($("#draft").val());
 		$("#draft").val('');
 		$(".draft").focus();
@@ -45,9 +45,9 @@ Todo.add = function(item){
 
 
 //function to remove item
-Todo.remove(){
+// Todo.remove(){
 	
-}
+// }
 
 
 

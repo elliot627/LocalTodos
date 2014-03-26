@@ -1,32 +1,40 @@
 //Todo object
-var Todo = {
-	list: new Array(),
+function Todo() {
+	this.list =  new Array(),
 
 	//returns a string of all tasks in list
-	printList: function(){
-		var ret = "";
+	this.printList = function(){
 		for(var i = 0; this.list.length; i++){
-			ret += this.list[i].getTask();
+			console.log(this.list[i]);
 		}
-		return ret;
 	},
 
 	//retuns list
-	getList: function(){
+	this.getList = function(){
 		return this.list;
 	},
 
 	//returns Task of given index
-	getTask: function(index){
+	this.getTask = function(index){
 		return this.list[index];
 	},
 
 	//adds task to list
-	add: function(task){
+	this.add = function(task){
 		if(task && (task !== ' ')){
 			this.list.push(new Task(task));
 			display(task);
 		}
+	},
+
+	//removes task from list
+	this.remove = function(finishedTask){
+		for (var i = 0; i < this.list.length; i++) {
+			if(this.list.getTask() == finishedTask){
+				console.log("removing " + this.list.getTask());
+				this.list.splice(i,1);
+			}
+		};
 	}
 }
 
@@ -78,14 +86,14 @@ $(document).ready(function(){
 
 	$("#draft").keypress(function(event){				//submit task via enter key
 		if(event.charCode === 13){
-			Todo.add($("#draft").val());
+			todo.add($("#draft").val());
 			$("#draft").val('');
 		}
 	});
 
 
 	$("#add").click(function(){							//submit task via submit button
-		Todo.add($("#draft").val());
+		todo.add($("#draft").val());
 		$("#draft").val('');
 		$(".draft").focus();
 	});
@@ -94,8 +102,8 @@ $(document).ready(function(){
 });
 
 $('body').on('click', '.task', function(){
-	var task = $(this).text();
-	var index = todo.
+	var finishedTask = $(this).text();
+	todo.remove(finishedTask);
 })
 
 

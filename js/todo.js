@@ -11,9 +11,14 @@ var Todo = {
 		return ret;
 	},
 
+	//retuns list
+	getList: function(){
+		return this.list;
+	},
+
 	//returns Task of given index
 	getTask: function(index){
-		return list[index];
+		return this.list[index];
 	},
 
 	//adds task to list
@@ -43,7 +48,7 @@ function Task(task){
 
 //method to append new task to list
 var display = function(task){
-	$("<li class=\"list-group-item task\">" + task + "</li>").hide().appendTo(".list").fadeIn(500);
+	$("<li class=\"list-group-item task\" style=\"color:black;\">" + task + "</li>").hide().appendTo(".list").fadeIn(500);
 }
 
 
@@ -59,6 +64,10 @@ Todo.populate = function(){
 // Todo.remove(){
 
 // }
+
+
+//instantiator
+var todo = new Todo();
 
 
 
@@ -82,11 +91,11 @@ $(document).ready(function(){
 	});
 
 
-	$(".task").click(function(){						//removes task
-		var task = $(this).text();
-		alert(task);
-	});
-
 });
+
+$('body').on('click', '.task', function(){
+	var task = $(this).text();
+	var index = todo.
+})
 
 

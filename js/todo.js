@@ -2,8 +2,8 @@
 var Todo = {
 	list: new Array(),
 
-	//returns all tasks in list
-	getList: function(){
+	//returns a string of all tasks in list
+	printList: function(){
 		var ret = "";
 		for(var i = 0; this.list.length; i++){
 			ret += this.list[i].getTask();
@@ -11,10 +11,16 @@ var Todo = {
 		return ret;
 	},
 
+	//returns Task of given index
+	getTask: function(index){
+		return list[index];
+	},
+
 	//adds task to list
 	add: function(task){
 		if(task && (task !== ' ')){
 			this.list.push(new Task(task));
+			display(task);
 		}
 	}
 }
@@ -45,15 +51,6 @@ var display = function(task){
 Todo.populate = function(){
 	for(var i = 0; i < this.length; i++){
 		display(this.list[i]);
-	}
-}
-
-
-//method to add and display new items
-Todo.add = function(task){
-	if(task && (task !== ' ')){
-		this.list.push(new Task(task));
-		display(task);
 	}
 }
 

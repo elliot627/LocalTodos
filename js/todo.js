@@ -33,6 +33,7 @@ function Todo() {
 		for (var i = 0; i < this.list.length; i++) {
 			if(this.list[i].getTask() == finishedTask){
 				this.list.splice(i,1);
+				break;
 			}
 		}
 	}

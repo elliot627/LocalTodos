@@ -22,7 +22,8 @@ function Todo() {
 
 	//adds task to list
 	this.add = function(task){
-		if(task.search(/[a-z]/) != -1){
+		var regex = new RegExp('[a-z]','i');
+		if(task.search(regex) != -1){
 			this.list.push(new Task(task));
 			display(task);
 		}
@@ -96,7 +97,7 @@ $(document).ready(function(){
 
 });
 
-$('body').on('click', '.glyphicon', function(){			//allows jQuery to remove tasks added after load
+$('body').on('click', '.glyphicon-ok', function(){			//allows jQuery to remove tasks added after load
 	var finishedTask = $(this).parent().text();
 	todo.remove(finishedTask);
 	$(this).parent().remove();

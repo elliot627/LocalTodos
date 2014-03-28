@@ -22,7 +22,7 @@ function Todo() {
 
 	//adds task to list
 	this.add = function(task){
-		if(task && (task !== ' ')){
+		if(task.search(/[a-z]/) != -1){
 			this.list.push(new Task(task));
 			display(task);
 		}

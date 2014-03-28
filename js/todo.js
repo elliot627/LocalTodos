@@ -62,14 +62,6 @@ var display = function(task){
 }
 
 
-//method to load list on load
-Todo.populate = function(){
-	for(var i = 0; i < this.length; i++){
-		display(this.list[i]);
-	}
-}
-
-
 //instantiator
 var todo = new Todo();
 

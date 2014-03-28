@@ -32,11 +32,9 @@ function Todo() {
 	this.remove = function(finishedTask){
 		for (var i = 0; i < this.list.length; i++) {
 			if(this.list[i].getTask() == finishedTask){
-				console.log("removing " + this.list[i].getTask());
 				this.list.splice(i,1);
-
 			}
-		};
+		}
 	}
 }
 
@@ -58,11 +56,7 @@ function Task(task){
 
 //method to append new task to list
 var display = function(task){
-	$("<li class=\"list-group-item task\" style=\"color:black;\">" + task + "</li>").hide().appendTo(".list").fadeIn(500);
-}
-
-var destroy = function(){
-
+	$("<li class=\"list-group-item task\" style=\"color:black;\">" + task + "<span class=\"glyphicon glyphicon-ok pull-right\" style=\"font-size:20px;\"></span></li>").hide().appendTo(".list").fadeIn(500);
 }
 
 
@@ -101,10 +95,11 @@ $(document).ready(function(){
 
 });
 
-$('body').on('click', '.task', function(){
-	var finishedTask = $(this).text();
+$('body').on('click', '.glyphicon', function(){			//allows jQuery to remove tasks added after load
+	var finishedTask = $(this).parent().text();
 	todo.remove(finishedTask);
-	$(this).remove();
+	$(this).parent().remove();
+	$(".draft").focus();
 })
 
 

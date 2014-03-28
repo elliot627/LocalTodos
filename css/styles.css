@@ -38,3 +38,11 @@ body {
     color: green;
     line-height: 13px;
 }
+
+.task{
+    font-size: 20px;
+}
+
+.task .glyphicon-ok{
+    cursor:pointer;
+}

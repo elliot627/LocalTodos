@@ -9,7 +9,7 @@ function Todo() {
 			console.log(this.list[i].getTask());
 		}
 	},
-	
+
 	//returns Task of given index
 	this.getTask = function(index){
 		return this.list[index];
@@ -21,6 +21,9 @@ function Todo() {
 		if(task.search(regex) != -1){
 			this.list.push(new Task(task));
 			display(task);
+		}
+		else{
+			alert("Sorry, please enter a valid task.");
 		}
 	},
 

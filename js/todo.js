@@ -9,12 +9,7 @@ function Todo() {
 			console.log(this.list[i].getTask());
 		}
 	},
-
-	//retuns list
-	this.getList = function(){
-		return this.list;
-	},
-
+	
 	//returns Task of given index
 	this.getTask = function(index){
 		return this.list[index];

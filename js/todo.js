@@ -3,9 +3,10 @@ function Todo() {
 	this.list =  new Array(),
 
 	//returns a string of all tasks in list
+	//(Just a debugging method)
 	this.printList = function(){
 		for(var i = 0; this.list.length; i++){
-			console.log(this.list[i]);
+			console.log(this.list[i].getTask);
 		}
 	},
 
@@ -30,8 +31,8 @@ function Todo() {
 	//removes task from list
 	this.remove = function(finishedTask){
 		for (var i = 0; i < this.list.length; i++) {
-			if(this.list.getTask() == finishedTask){
-				console.log("removing " + this.list.getTask());
+			if(this.list[i].getTask() == finishedTask){
+				console.log("removing " + this.list[i].getTask());
 				this.list.splice(i,1);
 			}
 		};
@@ -59,6 +60,10 @@ var display = function(task){
 	$("<li class=\"list-group-item task\" style=\"color:black;\">" + task + "</li>").hide().appendTo(".list").fadeIn(500);
 }
 
+var destroy = function(){
+
+}
+
 
 //method to load list on load
 Todo.populate = function(){
@@ -66,12 +71,6 @@ Todo.populate = function(){
 		display(this.list[i]);
 	}
 }
-
-
-//method to remove item
-// Todo.remove(){
-
-// }
 
 
 //instantiator

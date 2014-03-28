@@ -5,8 +5,8 @@ function Todo() {
 	//returns a string of all tasks in list
 	//(Just a debugging method)
 	this.printList = function(){
-		for(var i = 0; this.list.length; i++){
-			console.log(this.list[i].getTask);
+		for(var i = 0;i < this.list.length; i++){
+			console.log(this.list[i].getTask());
 		}
 	},
 
@@ -34,6 +34,7 @@ function Todo() {
 			if(this.list[i].getTask() == finishedTask){
 				console.log("removing " + this.list[i].getTask());
 				this.list.splice(i,1);
+
 			}
 		};
 	}
@@ -103,6 +104,7 @@ $(document).ready(function(){
 $('body').on('click', '.task', function(){
 	var finishedTask = $(this).text();
 	todo.remove(finishedTask);
+	$(this).remove();
 })
 
 

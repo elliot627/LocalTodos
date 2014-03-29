@@ -91,7 +91,6 @@ $('body').on('click', '.glyphicon-ok', function(){			//allows jQuery to remove t
 	var finishedTask = $(this).parent().text();
 	todo.remove(finishedTask);
 	$(this).parent().remove();
-	$(".draft").focus();
 })
 
 

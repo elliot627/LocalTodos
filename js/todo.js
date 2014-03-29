@@ -1,14 +1,8 @@
 //Todo object
 function Todo() {
-	this.list =  new Array(),
 
-	//returns a string of all tasks in list
-	//(Just a debugging method)
-	this.printList = function(){
-		for(var i = 0;i < this.list.length; i++){
-			console.log(this.list[i].getTask());
-		}
-	},
+	//The To-Do list in the flesh
+	this.list =  new Array(),
 
 	//returns Task of given index
 	this.getTask = function(index){
@@ -40,16 +34,16 @@ function Todo() {
 
 
 //Task object
-function Task(task){
+function Task(fresh){
 	//instance variable
-	this.task = task;
+	this.task = fresh;
 
 	//instance methods
-	this.getTask = function(){
+	this.getTask = function(){									//Returns task
 		return this.task;
 	}
-	this.setTask = function(updated){
-		task = updated;
+	this.setTask = function(updated){							//Changes task
+		this.task = updated;
 	}
 } 
 

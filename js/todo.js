@@ -11,13 +11,13 @@ function Todo() {
 
 	//adds task to list
 	this.add = function(task){
-		var regex = new RegExp('[a-z]','i');					//Ensures that blank tasks are not posted
+		var regex = new RegExp('[a-z]','i');					//Ensures tasks are not blank
 		if(task.search(regex) != -1){
 			this.list.push(new Task(task));
 			display(task);
 		}
 		else{
-			alert("Sorry, please enter a valid task.");			
+			alert("Sorry, please enter a valid task.");			//Alerts otherwise
 		}
 	},
 

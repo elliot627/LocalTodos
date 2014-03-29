@@ -17,13 +17,13 @@ function Todo() {
 
 	//adds task to list
 	this.add = function(task){
-		var regex = new RegExp('[a-z]','i');
+		var regex = new RegExp('[a-z]','i');					//Ensures that blank tasks are not posted
 		if(task.search(regex) != -1){
 			this.list.push(new Task(task));
 			display(task);
 		}
 		else{
-			alert("Sorry, please enter a valid task.");
+			alert("Sorry, please enter a valid task.");			
 		}
 	},
 
@@ -70,7 +70,7 @@ $(document).ready(function(){
 	$(".draft").focus();
 
 
-	$("#draft").keypress(function(event){				//submit task via enter key
+	$("#draft").keypress(function(event){						//submit task via enter key
 		if(event.charCode === 13){
 			todo.add($("#draft").val());
 			$("#draft").val('');
@@ -78,7 +78,7 @@ $(document).ready(function(){
 	});
 
 
-	$("#add").click(function(){							//submit task via submit button
+	$("#add").click(function(){									//submit task via submit button
 		todo.add($("#draft").val());
 		$("#draft").val('');
 		$(".draft").focus();
@@ -87,7 +87,7 @@ $(document).ready(function(){
 
 });
 
-$('body').on('click', '.glyphicon-ok', function(){			//allows jQuery to remove tasks added after load
+$('body').on('click', '.glyphicon-ok', function(){				//allows jQuery to remove tasks added after load
 	var finishedTask = $(this).parent().text();
 	todo.remove(finishedTask);
 	$(this).parent().remove();

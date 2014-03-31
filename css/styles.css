@@ -46,3 +46,6 @@ body {
 .task .glyphicon-ok{
     cursor:pointer;
 }
+.task .glyphicon-ok:hover{
+    color:#5cb85c;
+}

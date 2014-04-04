@@ -37,9 +37,6 @@ function Task(fresh){
 	this.getTask = function(){									//Returns task
 		return this.task;
 	}
-	this.setTask = function(updated){							//Changes task
-		this.task = updated;
-	}
 } 
 
 

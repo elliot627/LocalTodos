@@ -4,11 +4,6 @@ function Todo() {
 	//The To-Do list in the flesh
 	this.list =  new Array(),
 
-	//returns Task of given index
-	this.getTask = function(index){
-		return this.list[index];
-	},
-
 	//adds task to list
 	this.add = function(task){
 		var regex = new RegExp('[a-z]','i');					//Ensures tasks are not blank

@@ -1,4 +1,6 @@
-	//Todo object
+	///////////////
+	//Todo object//
+	///////////////
 	function Todo() {
 
 		//The To-Do list in the flesh
@@ -27,14 +29,15 @@
 		}
 	}
 
-
-	//Task object
+	///////////////
+	//Task object//
+	///////////////
 	function Task(fresh){
 		//instance variable
 		this.task = fresh;
 
 		//instance methods
-		this.getTask = function(){									//Returns task
+		this.getTask = function(){															//Returns task
 			return this.task;
 		}
 	}
@@ -50,8 +53,9 @@
 	var todo = new Todo();
 
 
-
-	//provides interactivity
+	/////////////////////////////////
+	//jQuery provides interactivity//
+	/////////////////////////////////
 	$(document).ready(function(){
 		$(".draft").focus();
 

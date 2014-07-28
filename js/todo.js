@@ -16,7 +16,7 @@ function Todo() {
 		}
 	},
 
-	//removes task from list
+	//removes given task from list
 	this.remove = function(finishedTask){
 		for (var i = 0; i < this.list.length; i++) {
 			if(this.list[i].getTask() == finishedTask){
@@ -37,7 +37,7 @@ function Task(fresh){
 	this.getTask = function(){									//Returns task
 		return this.task;
 	}
-} 
+}
 
 
 //method to append new task to list
@@ -56,7 +56,7 @@ $(document).ready(function(){
 	$(".draft").focus();
 
 
-	$("#draft").keypress(function(event){						//submit task via enter key
+	$("#draft").keypress(function(event){										//submit task via enter key
 		if(event.charCode === 13){
 			todo.add($("#draft").val());
 			$("#draft").val('');
@@ -64,7 +64,7 @@ $(document).ready(function(){
 	});
 
 
-	$("#add").click(function(){									//submit task via submit button
+	$("#add").click(function(){															//submit task via submit button
 		todo.add($("#draft").val());
 		$("#draft").val('');
 		$(".draft").focus();
@@ -78,5 +78,3 @@ $('body').on('click', '.glyphicon-ok', function(){				//allows jQuery to remove 
 	todo.remove(finishedTask);
 	$(this).parent().remove();
 })
-
-

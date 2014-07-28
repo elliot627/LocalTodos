@@ -1,5 +1,5 @@
 	///////////////
-	//Todo object//
+	//List object//
 	///////////////
 	function Todo() {
 
